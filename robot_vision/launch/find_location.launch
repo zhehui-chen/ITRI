@@ -1,0 +1,24 @@
+<launch>
+    <arg name="test" default="true"/>
+
+    <include file="$(find usb_cam)/launch/usb_cam.launch" unless="$(arg test)"/>
+
+    <group ns="camera1">
+        <node name="contour_location" pkg="robot_vision" type="init" output="screen">
+            <param name="id" type="str" value="camera1"/>
+            <param name="path_image_raw" type="str" value="/camera1/image_view/output"/>
+            <param name="fg_existingImages" type="bool" value="$(arg test)"/>
+            <param name="path_existImage" type="str" value="../itri_ws/image/point6.jpg"/>
+        </node>
+    </group>
+
+    <group ns="camera2">
+        <node name="contour_location" pkg="robot_vision" type="init" output="screen">
+            <param name="id" type="str" value="camera2"/>
+            <param name="path_image_raw" type="str" value="/camera2/image_view/output"/>
+            <param name="fg_existingImages" type="bool" value="$(arg test)"/>
+            <param name="path_existImage" type="str" value="../itri_ws/image/point7.jpg"/>
+        </node>
+    </group>
+
+</launch>
