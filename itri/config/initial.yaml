@@ -1,0 +1,23 @@
+%YAML:1.0
+
+# change your topic path
+image1_topic: "/camera1/image_view/output"
+image2_topic: "/camera2/image_view/output"
+
+image1_path: "/home/zhe_hui/itri_ws/image/multipoints9.jpg"
+image2_path: "/home/zhe_hui/itri_ws/image/multipoints10.jpg"
+
+R_12: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 1,  0,  0, 
+           0,  1,  0, 
+           0,  0,  1]
+
+t_12: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [0.0,0.0,0.0]
+
